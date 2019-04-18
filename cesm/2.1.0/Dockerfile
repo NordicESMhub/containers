@@ -32,7 +32,7 @@ RUN wget http://www.mpich.org/static/downloads/3.3/mpich-3.3.tar.gz && \
     make && make install && \
     cd .. && rm -rf mpich-3.3
 
-RUN wget -O hdf5-1.10.5.tar.gz https://www.hdfgroup.org/package/hdf5-1-10-5-tar-gz/?wpdmdl=13571&refresh=5cb739d6d3ef21555511766 &&  \
+RUN wget -O hdf5-1.10.5.tar.gz --no-check-certificate https://www.hdfgroup.org/package/hdf5-1-10-5-tar-gz/?wpdmdl=13571&refresh=5cb739d6d3ef21555511766 &&  \
   tar zxvf hdf5-1.10.5.tar.gz && cd hdf5-1.10.5 && \
   ./configure CC=mpicc CXX=mpic++ F77=mpifort FC=mpifort --enable-fortran --enable-parallel && \
   make && make install && cd .. && rm -rf hdf5.1.10.5
