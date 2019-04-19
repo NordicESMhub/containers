@@ -32,10 +32,10 @@ RUN wget http://www.mpich.org/static/downloads/3.3/mpich-3.3.tar.gz && \
     make && make install && \
     cd .. && rm -rf mpich-3.3
 
-RUN wget -O hdf5-1.10.5.tar.gz --no-check-certificate https://www.hdfgroup.org/package/hdf5-1-10-5-tar-gz/?wpdmdl=13571&refresh=5cb739d6d3ef21555511766 &&  \
-  tar zxvf hdf5-1.10.5.tar.gz && cd hdf5-1.10.5 && \
+RUN wget https://github.com/live-clones/hdf5/archive/hdf5-1_10_5.tar.gz &&  \
+  tar zxvf hdf5-1_10_5.tar.gz && cd hdf5-hdf5-1_10_5 && \
   ./configure CC=mpicc CXX=mpic++ F77=mpifort FC=mpifort --enable-fortran --enable-parallel && \
-  make && make install && cd .. && rm -rf hdf5.1.10.5
+  make && make install && cd .. && rm -rf hdf5-hdf5-1_10_5
 
 RUN wget https://www.unidata.ucar.edu/downloads/netcdf/ftp/netcdf-c-4.6.3.tar.gz && \
    tar zxvf netcdf-c-4.6.3.tar.gz && cd netcdf-c-4.6.3 && \
