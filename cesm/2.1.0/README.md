@@ -142,3 +142,6 @@ Depending in what the user wants (here run from January 1850 and run for one mon
 ~~~`bash`
 ./case.submit
 ~~~
+
+With a VM with 32 processors and 64 GB, it takes 490 pe-hrs / simulated year i.e 1.56 simulated_years / day.
+
