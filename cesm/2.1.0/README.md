@@ -97,7 +97,21 @@ fi
 
 ## Compile CESM
 
+### Get CESM source
+
+Documentation available at [https://escomp.github.io/cesm/release-cesm2/downloading_cesm.html](https://escomp.github.io/cesm/release-cesm2/downloading_cesm.html) or [http://www.cesm.ucar.edu/models/cesm2/release_download.html](http://www.cesm.ucar.edu/models/cesm2/release_download.html).
+
+Always take a release, as the master branch is usually not working properly:
+
+~~~`bash`
+git clone -b release-cesm2.1.0 https://github.com/ESCOMP/cesm.git
+~~~
+
+
 ### CESM configuration files
+
+These configuration files contain information on the compilers and machine (number of processors, memory, etc.) used for running CESM. 
+They are used for creating, building and running new cases (i.e. running a climate experiment). We need to be able to set some paths at runtime for instance for the input directory (where input files will be downloaded for running your case), working directory (where your climate experiment will be run), archiving directory (where to store climate model outputs once your run is finished).
 
 ~~~`bash`
 cp ./config_files/config_machines.xml /opt/uio/cesm/beta.cesm2.2/cime/config/cesm/machines/config_machines.xml
