@@ -121,7 +121,10 @@ cp ./config_files/config_pes.xml_in_cime_config /opt/uio/cesm/beta.cesm2.2/cime_
 cp ./config_files/config_pes.xml_in_components_cam_cime_config /opt/uio/cesm/beta.cesm2.2/components/cam/cime_config/config_pes.xml
 ~~~
 
+These configuration files can also be in `$HOME/.cime` as explained [here](http://www.cesm.ucar.edu/events/tutorials/2017/porting-edwards.pdf). It needs to be tested as it could be a good way to run CESM from Galaxy.
+
 ### Create a new case 
+
 
 Depending on the case chosen by the user (case, res, compset). For instance these options will be given by galaxy tools.
 
