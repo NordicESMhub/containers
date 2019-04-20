@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+
+<config_compilers version="2.0">
+
+<compiler COMPILER="gnu" MACH="espresso">
+  <CPPDEFS>
+    <append>-DFORTRANUNDERSCORE -DNO_R16</append>
+  </CPPDEFS>
+  <LDFLAGS>
+    <append compile_threaded="true"> -fopenmp </append>
+  </LDFLAGS>
+    <SFC>/usr/bin/gfortran-6</SFC>
+    <SCC>/usr/bin/gcc-6</SCC>
+    <SCXX>/usr/bin/g++-6</SCXX>
+    <MPIFC>/opt/uio/modules/packages/mpich/3.3/bin/mpifort</MPIFC>
+    <MPICC>/opt/uio/modules/packages/mpich/3.3/bin/mpicc</MPICC>
+    <MPICXX>/opt/uio/modules/packages/mpich/3.3/bin/mpicxx</MPICXX>
+    <CXX_LINKER>FORTRAN</CXX_LINKER>
+    <SUPPORTS_CXX>TRUE</SUPPORTS_CXX>
+    <NETCDF_PATH>/opt/uio/modules/packages/netcdf/4.6.3</NETCDF_PATH>
+    <SLIBS>
+      <append>$(shell $(NETCDF_PATH)/bin/nf-config --flibs)</append>
+      <append> -llapack -lblas </append>
+    </SLIBS>
+</compiler>
+
+<compiler COMPILER="gnu">
+  <CFLAGS>
+    <base> -std=gnu99 </base>
+    <append compile_threaded="true"> -fopenmp </append>
+    <append DEBUG="TRUE"> -g -Wall -Og -fbacktrace -ffpe-trap=invalid,zero,overflow -fcheck=all </append>
+    <append DEBUG="FALSE"> -O </append>
+  </CFLAGS>
+  <CPPDEFS>
+    <append> -DFORTRANUNDERSCORE -DNO_R16 -DCPRGNU</append>
+  </CPPDEFS>
+  <CXX_LINKER>FORTRAN</CXX_LINKER>
+  <FC_AUTO_R8>
+    <base> -fdefault-real-8 </base>
+  </FC_AUTO_R8>
+  <FFLAGS>
+    <base>  -fconvert=big-endian -ffree-line-length-none -ffixed-line-length-none </base>
+    <append compile_threaded="true"> -fopenmp </append>
+    <append DEBUG="TRUE"> -g -Wall -Og -fbacktrace -ffpe-trap=zero,overflow -fcheck=all </append>
+    <append DEBUG="FALSE"> -O </append>
+  </FFLAGS>
+  <FFLAGS_NOOPT>
+    <base> -O0 </base>
+  </FFLAGS_NOOPT>
+  <FIXEDFLAGS>
+    <base>  -ffixed-form </base>
+  </FIXEDFLAGS>
+  <FREEFLAGS>
+    <base> -ffree-form </base>
+  </FREEFLAGS>
+  <HAS_F2008_CONTIGUOUS>FALSE</HAS_F2008_CONTIGUOUS>
+  <LDFLAGS>
+    <append compile_threaded="true"> -fopenmp </append>
+  </LDFLAGS>
+  <MPICC> mpicc </MPICC>
+  <MPICXX> mpicxx </MPICXX>
+  <MPIFC> mpif90 </MPIFC>
+  <SCC> gcc </SCC>
+  <SCXX> g++ </SCXX>
+  <SFC> gfortran </SFC>
+  <SUPPORTS_CXX>TRUE</SUPPORTS_CXX>
+</compiler>
+
+</config_compilers>
