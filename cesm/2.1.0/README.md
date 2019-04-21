@@ -1,5 +1,7 @@
 # Dockerfile for [CESM](http://cesm.ucar.edu)
 
+Some relevant information [here](http://www.cesm.ucar.edu/models/cesm1.3/linux_cluster/).
+
 It was compiled and run on a VM with Ubuntu 18.04 LTS
 
 ## Native package installation
