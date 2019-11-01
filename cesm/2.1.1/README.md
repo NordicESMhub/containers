@@ -1,4 +1,11 @@
-# Dockerfile for [CESM](http://cesm.ucar.edu)
+# Create a use case from generic docker container
+
+1. We start from a base docker container and generate a configuration
+2. Publish our newly container so we can reproduce our results on any machines
+
+# Annex
+
+## Work done to create Dockerfile for [CESM](http://cesm.ucar.edu)
 
 Some relevant information [here](http://www.cesm.ucar.edu/models/cesm1.3/linux_cluster/).
 
