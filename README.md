@@ -11,6 +11,10 @@ Containers for running ESM related tools.
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
+# CESM 
+
+[Community Earth System Model (CESM)](http://www.cesm.ucar.edu/models/) supports several configurations. We provide examples on how to run CESM with docker containers. Several compset and resolutions have been tested and input data stored in [zenodo](https://zenodo.org/) to facilitate the usage and deployment of these docker containers.
+
 ## Tested
 
 - [FKESSLER](https://github.com/NordicESMhub/fkessler_docker)
