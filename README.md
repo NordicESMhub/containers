@@ -20,9 +20,8 @@ Containers for running ESM related tools.
 - [FKESSLER](https://github.com/NordicESMhub/fkessler_docker)
 - [F1850](https://github.com/NordicESMhub/F1850_docker)
 - [CESM historic with CAM6 and CLM5 (no ocean)](https://github.com/NordicESMhub/hc6l5_docker)
+- [VR-CESM historic with CAM6 and CLM5 (no ocean) and variable resolution](https://github.com/NordicESMhub/VR-CESM_docker)
 
 ## Work In Progress
 
 - [B1850](https://github.com/NordicESMhub/B1850_docker)
-- [VR-CESM](https://github.com/NordicESMhub/VR-CESM_docker)
-
