@@ -66,6 +66,27 @@ Finally restart docker:
 sudo systemctl daemon-reload
 sudo systemctl start docker
 ```
+## Test your installation
+
+Logout and login again (to make sure `centos` username is part of docker group).
+
+```
+docker ps
+```
+This command should return:
+
+```
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+0
+```
+
+# How to get inputdata
+
+You will need `wget` to download the corresponding inputdata for each each you will be running.
+
+```
+sudo yum install wget -y
+```
 
 # Docker for Community Earth System Models (CESM) 
 
