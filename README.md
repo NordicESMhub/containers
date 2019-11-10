@@ -10,8 +10,60 @@ Containers for running ESM related tools.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+# Installation of docker on centos 7
 
-# CESM 
+To test and run our docker containers, we use [IaaS](http://docs.uh-iaas.no/en/latest/) and create a virtual machine with centos-7. Then we install docker using the following instructions:
+
+```
+sudo yum check-update
+
+
+curl -fsSL https://get.docker.com/ | sh
+
+sudo usermod -aG docker centos
+
+sudo systemctl start docker
+```
+
+## Check status
+
+```
+sudo systemctl status docker
+```
+
+## Enable docker 
+
+It allows to start docker automatically when the machine is rebooted
+
+```
+sudo systemctl enable docker
+```
+
+## Change default location
+
+The default disk on our Virtual Machine is about 20GB e.g. too small for our docker images so we create a new volume `/opt/uio/` (500GB) and change default folder to `/opt/uio/docker` (make sure to create this folder):
+
+```
+sudo systemctl stop docker
+sudo mkdir /etc/systemd/system/docker.service.d
+sudo touch /etc/systemd/system/docker.service.d/docker.conf 
+```
+
+Then edit `/etc/systemd/system/docker.service.d/docker.conf` and add:
+
+```
+[Service]
+ExecStart=/usr/bin/dockerd --graph="/opt/uio/docker" --storage-driver=devicemapper
+```
+
+Finally restart docker:
+
+```
+sudo systemctl daemon-reload
+sudo systemctl start docker
+```
+
+# docker for Community Earth System Models (CESM) 
 
 [Community Earth System Model (CESM)](http://www.cesm.ucar.edu/models/) supports several configurations. We provide examples on how to run CESM with docker containers. Several compset and resolutions have been tested and input data stored in [zenodo](https://zenodo.org/) to facilitate the usage and deployment of these docker containers.
 
