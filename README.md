@@ -53,7 +53,7 @@ sudo mkdir /etc/systemd/system/docker.service.d
 sudo touch /etc/systemd/system/docker.service.d/docker.conf 
 ```
 
-Then edit `/etc/systemd/system/docker.service.d/docker.conf` and add:
+Then edit (with sudo) `/etc/systemd/system/docker.service.d/docker.conf` and add:
 
 ```
 [Service]
