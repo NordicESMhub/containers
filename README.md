@@ -102,3 +102,39 @@ sudo yum install wget -y
 ## Work In Progress
 
 - [B1850](https://github.com/NordicESMhub/B1850_docker)
+
+# A few docker commands
+
+## If you container exited abnormally
+
+```
+docker ps --filter "status=exited"
+```
+
+## Stop and remove your docker instance
+
+Then stop and rm your container id:
+
+```
+docker stop <container_id>
+```
+
+and
+
+```
+docker rm <container_id>
+```
+
+## Remove your docker images
+
+```
+docker images
+```
+
+The command above allows you to get the image identifier. Now you can remove your image with the following command:
+
+```
+docker rmi <image_id>
+```
+
+
