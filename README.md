@@ -45,7 +45,23 @@ The default disk on our Virtual Machine is about 20GB e.g. too small for our doc
 
 First [create a new volume](http://docs.uh-iaas.no/en/latest/manage-volumes.html#create-a-volume) and [attach it to your Virtual Machine](http://docs.uh-iaas.no/en/latest/manage-volumes.html#attach-a-volume-to-a-virtual-machine).
 
-Then change default folder to `/opt/uio/docker` (make sure to create this folder):
+Then change default folder to `/opt/uio/docker`:
+
+```
+sudo mkdir /opt/uio/docker
+```
+
+You should have:
+
+```
+ls -lrt 
+
+drwx--x--x. 14 root   root         4096 Nov  2 10:25 docker
+```
+
+
+
+And then change the default location to this new folder:
 
 ```
 sudo systemctl stop docker
