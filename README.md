@@ -59,21 +59,18 @@ ls -lrt
 drwx--x--x. 14 root   root         4096 Nov  2 10:25 docker
 ```
 
-
-
 And then change the default location to this new folder:
 
 ```
 sudo systemctl stop docker
-sudo mkdir /etc/systemd/system/docker.service.d
-sudo touch /etc/systemd/system/docker.service.d/docker.conf 
 ```
 
-Then edit (with sudo) `/etc/systemd/system/docker.service.d/docker.conf` and add:
+Then edit (with sudo) `sudo vi /etc/docker/daemon.json` and add:
 
 ```
-[Service]
-ExecStart=/usr/bin/dockerd --graph="/opt/uio/docker" --storage-driver=devicemapper
+{
+  "data-root": "/opt/uio/docker"
+}
 ```
 
 Finally restart docker:
