@@ -121,6 +121,62 @@ sudo yum install wget -y
 
 # A few docker commands
 
+## Get info on docker service
+
+```
+docker info
+```
+
+It should return something like:
+
+```
+Client:
+ Debug Mode: false
+
+Server:
+ Containers: 1
+  Running: 1
+  Paused: 0
+  Stopped: 0
+ Images: 21
+ Server Version: 19.03.4
+ Storage Driver: overlay2
+  Backing Filesystem: extfs
+  Supports d_type: true
+  Native Overlay Diff: true
+ Logging Driver: json-file
+ Cgroup Driver: cgroupfs
+ Plugins:
+  Volume: local
+  Network: bridge host ipvlan macvlan null overlay
+  Log: awslogs fluentd gcplogs gelf journald json-file local logentries splunk syslog
+ Swarm: inactive
+ Runtimes: runc
+ Default Runtime: runc
+ Init Binary: docker-init
+ containerd version: b34a5c8af56e510852c35414db4c1f4fa6172339
+ runc version: 3e425f80a8c931f88e6d94a8c831b9d5aa481657
+ init version: fec3683
+ Security Options:
+  seccomp
+   Profile: default
+ Kernel Version: 3.10.0-1062.4.1.el7.x86_64
+ Operating System: CentOS Linux 7 (Core)
+ OSType: linux
+ Architecture: x86_64
+ CPUs: 32
+ Total Memory: 117.9GiB
+ Name: hpc32.novalocal
+ ID: XNRD:EARM:KHVU:ZH47:QS32:NBE2:FHYX:MGW7:GMLK:RNIK:KT36:2J4D
+ Docker Root Dir: /opt/uio/docker
+ Debug Mode: false
+ Registry: https://index.docker.io/v1/
+ Labels:
+ Experimental: false
+ Insecure Registries:
+  127.0.0.0/8
+ Live Restore Enabled: false
+ ```
 ## If you container exited abnormally
 
 ```
