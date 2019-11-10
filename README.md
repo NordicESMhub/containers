@@ -5,7 +5,7 @@ Containers for running ESM related tools.
 ## Approach
 
 1. Create a conda recipe for your tool. We usually add it either in [conda-forge](https://conda-forge.org/) or [bioconda](https://bioconda.github.io/).
-2. When using bioconda, you will get a Docker container out-of-the-box which you can use to as a starting point for running a specific configuration
+2. When using bioconda, you will get a Docker container out-of-the-box which you can use as a starting point for running a specific configuration
 3. Publish your docker. We use [dockerhub](https://hub.docker.com/).
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -41,7 +41,11 @@ sudo systemctl enable docker
 
 ## Change default location
 
-The default disk on our Virtual Machine is about 20GB e.g. too small for our docker images so we create a new volume `/opt/uio/` (500GB) and change default folder to `/opt/uio/docker` (make sure to create this folder):
+The default disk on our Virtual Machine is about 20GB e.g. too small for our docker images so we create a new volume `/opt/uio/` (500GB).
+
+First [create a new volume](http://docs.uh-iaas.no/en/latest/manage-volumes.html#create-a-volume) and [attach it to your Virtual Machine](http://docs.uh-iaas.no/en/latest/manage-volumes.html#attach-a-volume-to-a-virtual-machine).
+
+Then change default folder to `/opt/uio/docker` (make sure to create this folder):
 
 ```
 sudo systemctl stop docker
@@ -63,7 +67,7 @@ sudo systemctl daemon-reload
 sudo systemctl start docker
 ```
 
-# docker for Community Earth System Models (CESM) 
+# Docker for Community Earth System Models (CESM) 
 
 [Community Earth System Model (CESM)](http://www.cesm.ucar.edu/models/) supports several configurations. We provide examples on how to run CESM with docker containers. Several compset and resolutions have been tested and input data stored in [zenodo](https://zenodo.org/) to facilitate the usage and deployment of these docker containers.
 
