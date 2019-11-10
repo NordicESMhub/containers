@@ -76,7 +76,6 @@ Then edit (with sudo) `sudo vi /etc/docker/daemon.json` and add:
 Finally restart docker:
 
 ```
-sudo systemctl daemon-reload
 sudo systemctl start docker
 ```
 ## Test your installation
