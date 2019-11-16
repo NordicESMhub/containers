@@ -115,6 +115,7 @@ sudo yum install wget -y
 ## Work In Progress
 
 - [B1850](https://github.com/NordicESMhub/B1850_docker)
+- [NorESM fully coupled N1850 compset and f19_tn14 resolution](https://github.com/NorESMhub/i16N1850_docker)
 
 # A few docker commands
 
