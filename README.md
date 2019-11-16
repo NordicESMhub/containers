@@ -110,6 +110,7 @@ sudo yum install wget -y
 - [F1850](https://github.com/NordicESMhub/F1850_docker)
 - [CESM historic with CAM6 and CLM5 (no ocean)](https://github.com/NordicESMhub/hc6l5_docker)
 - [VR-CESM historic with CAM6 and CLM5 (no ocean) and variable resolution](https://github.com/NordicESMhub/VR-CESM_docker)
+- [NorESM-CAM](https://github.com/NorESMhub/NorESM_docker)
 
 ## Work In Progress
 
