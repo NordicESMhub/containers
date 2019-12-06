@@ -10,6 +10,30 @@ Containers for running ESM related tools.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+
+# How to get inputdata
+
+You will need `wget` to download the corresponding inputdata for each each you will be running.
+
+```
+sudo yum install wget -y
+```
+
+# Docker for Community Earth System Models (CESM) 
+
+[Community Earth System Model (CESM)](http://www.cesm.ucar.edu/models/) supports several configurations. We provide examples on how to run CESM with docker containers. Several compset and resolutions have been tested and input data stored in [zenodo](https://zenodo.org/) to facilitate the usage and deployment of these docker containers.
+
+## Tested
+
+- [FKESSLER](https://github.com/NordicESMhub/fkessler_docker)
+- [F1850](https://github.com/NordicESMhub/F1850_docker)
+- [CESM historic with CAM6 and CLM5 (no ocean)](https://github.com/NordicESMhub/hc6l5_docker)
+- [VR-CESM historic with CAM6 and CLM5 (no ocean) and variable resolution](https://github.com/NordicESMhub/VR-CESM_docker)
+- [NorESM-CAM](https://github.com/NorESMhub/NorESMCAM_docker)
+- [B1850](https://github.com/NordicESMhub/B1850_docker)
+- [NorESM fully coupled N1850 compset and f19_tn14 resolution](https://github.com/NorESMhub/i16N1850_docker)
+
+
 # Installation of docker on centos 7
 
 To test and run our docker containers, we use [IaaS](http://docs.uh-iaas.no/en/latest/) and create a virtual machine with centos-7. Then we install docker using the following instructions:
@@ -91,31 +115,6 @@ This command should return:
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 0
 ```
-
-# How to get inputdata
-
-You will need `wget` to download the corresponding inputdata for each each you will be running.
-
-```
-sudo yum install wget -y
-```
-
-# Docker for Community Earth System Models (CESM) 
-
-[Community Earth System Model (CESM)](http://www.cesm.ucar.edu/models/) supports several configurations. We provide examples on how to run CESM with docker containers. Several compset and resolutions have been tested and input data stored in [zenodo](https://zenodo.org/) to facilitate the usage and deployment of these docker containers.
-
-## Tested
-
-- [FKESSLER](https://github.com/NordicESMhub/fkessler_docker)
-- [F1850](https://github.com/NordicESMhub/F1850_docker)
-- [CESM historic with CAM6 and CLM5 (no ocean)](https://github.com/NordicESMhub/hc6l5_docker)
-- [VR-CESM historic with CAM6 and CLM5 (no ocean) and variable resolution](https://github.com/NordicESMhub/VR-CESM_docker)
-- [NorESM-CAM](https://github.com/NorESMhub/NorESMCAM_docker)
-
-## Work In Progress
-
-- [B1850](https://github.com/NordicESMhub/B1850_docker)
-- [NorESM fully coupled N1850 compset and f19_tn14 resolution](https://github.com/NorESMhub/i16N1850_docker)
 
 # A few docker commands
 
