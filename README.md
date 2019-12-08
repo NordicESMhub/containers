@@ -30,9 +30,9 @@ sudo yum install wget -y
 - [CESM historic with CAM6 and CLM5 (no ocean)](https://github.com/NordicESMhub/hc6l5_docker)
 - [VR-CESM historic with CAM6 and CLM5 (no ocean) and variable resolution](https://github.com/NordicESMhub/VR-CESM_docker)
 - [NorESM-CAM](https://github.com/NorESMhub/NorESMCAM_docker)
-- [B1850](https://github.com/NordicESMhub/B1850_docker)
+- [B1850 GNU compilers](https://github.com/NordicESMhub/B1850_docker)
+- [B1850 intel compilers](https://github.com/NordicESMhub/B1850_docker_intel)
 - [NorESM fully coupled N1850 compset and f19_tn14 resolution](https://github.com/NorESMhub/i16N1850_docker)
-
 
 # Installation of docker on centos 7
 
