@@ -525,8 +525,18 @@ done
 	   ```
 	   docker export 28c7d8c6ca16 -o nordicesmhub_b1850_intel_active.tar
 	   ```
-	   Once transfered on Piz Daint, we load it as before (sarus load).
-
+	   Or to reuse the docker container locally:
+	   ```
+	   docker export 28c7d8c6ca16 | docker import - nordicesmhub/b1850:intel
+	   ```
+	   Once transfered on Piz Daint, we load it as before (sarus load) but it failed (we got a strange error) so we had to load it "manually":
+	   ```
+	    tar -xf nordicesmhub_b1850_intel_active.tar  | mksquashfs intel.squashfs 
+	   ```
+	   Then we replaced the existing loaded (but wrong) intel image:
+	   ```
+	   mv intel.squashfs $SCRATCH/.sarus/images/load/library/nordicesmhub/b1850/.
+	   ```
         2. However, it was still failing because, sarus could not "remap" the mpi intel libraries to the CRAY native MPI libraries. We realized that ldconfig (in the docker container) did not show intel MPI libraries properly. 
 	`ldconfig` was not correct so we had to manually create a new file `intel.mpi.conf` (in the container on our Virtual Machine) in `/etc/ld.so.conf.d` with:
            ```
@@ -537,6 +547,7 @@ done
 	   ```
 	   docker export 28c7d8c6ca16 -o nordicesmhub_b1850_intel_active.tar
 	   ```
+	   And also loaded the intel image manually with `mksquashfs`.
            It seemed to work properly but we found out that NorESM/CESM was compiled in DEBUG mode while we specified the release MPI libraries in ldconfig (in our docker container). We tried to fix it:
 	   ```
 	   cat /etc/ld.so.conf.d/intel.mpi.conf 
