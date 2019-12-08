@@ -1,0 +1,22 @@
+baseurl: "/containers"
+title: "Containerization of NorESM/CESM"
+
+source: .
+destination: ./_site
+layouts_dir: ./jekyll-common/layouts
+includes_dir: ./jekyll-common/includes
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'codehilite'
+
+include: ['jekyll-common/pages']
+exclude: ['LICENSE']
+
+collections:
+  episodes:
+    output: true
+    permalink: /:name/
