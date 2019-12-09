@@ -11,7 +11,6 @@ NorESM (Norwegian Earth System Model) builds on the CESM but with specific addit
  An ocean component that originates from the Miami Isopycnic Coordinate Ocean Model (MICOM) but extensively modified at NERSC and UNI. 
  Hamburg Model of Ocean Carbon Cycle adopted for use with an isopycnic ocean model by UiB and UNI. 
  New options for computing turbulent atmosphere-ocean fluxes and maintaining atmospheric energy and momentum consistency implemented by UNI.                                                                                         
-                                                                                                          	 
 # Application overview                                                                                         
 CESM/NorESM is composed of separate models simultaneously simulating the Earth’s atmosphere, ocean, land, river run-off, land-ice, and sea-ice, plus one central coupler/moderator component. CESM/NorESM allows researchers to conduct fundamental research into the Earth’s past, present, and future climate states.
 
