@@ -222,16 +222,16 @@ For these two cases, our goal was to run with different number of nodes.
 
 See [VR-CESM docker files](https://github.com/NordicESMhub/VR-CESM_docker).
 
-Our goal was to test several processor layouts:
+NorESM/CESM is not a very flexible model and one needs to recompile it every time the
+number of nodes or tasks per node are changed. While we initially created docker for running one configuration only, we found out that it would be faster to generate as many configurations as we wish to test in one single container. 
+
+Our goal was to test several processor layouts so we generated 5 cases:
 
 - VR-CESM on 1 node (12 processors)
 - VR-CESM on 4 nodes (48 processors)
 - VR-CESM on 8 nodes (96 processors)
 - VR-CESM on 16 nodes (192 processors)
 - VR CESM on 42 nodes (504 processors)
-
-NorESM/CESM is not a very flexible model and one needs to recompile it every time the
-number of nodes or tasks per node are changed. While we initially created docker for running one configuration only, we found out that it would be faster to generate as many configurations as we wish to test in one single container. We generated 5 cases:
 
 The dockerfile and configuration for generating this docker container is in `piz-daint` branch on [VR-CESM github repository](https://github.com/NordicESMhub/VR-CESM_docker/tree/piz-daint).
 
@@ -350,6 +350,8 @@ srun -C gpu --reservation=esiwace_2 -N 42 -n 504 -t 360 sarus run --mpi \
 
 ### Results
 
+All cases were setup to run one day (while normally we run climate models over decades or at least 20-30 years). However, the main goal here was to be able to run different layout and get some inputs about the behavior of VR-CESM when run in a docker container.
+
 - Case-1: Did not record time. (12 processors)
 - Case-2: 6598 s (48 processors)
 - Case-3: 3325 s (96 processors)
@@ -362,8 +364,7 @@ srun -C gpu --reservation=esiwace_2 -N 42 -n 504 -t 360 sarus run --mpi \
 >
 {: .callout}
 
-Results are very similar to what we get on our HPC. Timing obtained for Case-5 is a bit surprising to us. We did not expect it to exhibit so poor scaling with 504 processors. 
-
+Results are very similar to what we get on our HPC. Timing obtained for Case-5 is a bit surprising to us. We did not expect it to exhibit so poor scaling with 504 processors. However, we realized afterwards that in these cases, we setup the model to save daily outputs so the runs most likely spent most of the time writing model outputs.
 
 ### Generate fully coupled NorESM/CESM docker (GNU-compiler)
 
@@ -450,6 +451,8 @@ We created two docker containers for both [B1850 GNU](https://github.com/NordicE
 - Case-6: 168 nodes, 2016 processors
 
 However, we only tested case-1 (48 processors) to case-4 (504 processors) on Piz Daint.
+
+All cases were configured to run 5 days and we kept monthly outputs so we don't write final model outputs at the end of each simulation (so we get some information about scaling and not I/Os).
 
 We save the generated docker containers as tarball and transfered them on Piz-Daint:
 
