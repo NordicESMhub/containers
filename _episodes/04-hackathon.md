@@ -572,7 +572,7 @@ We only managed to run the 4 cases once only.
 - Case-1: 2434 s (4 nodes, 48 processors)
 - Case-2: 1293 s (8 nodes, 96 processors)
 - Case-3: 670 s (16 nodes, 192 processors)
-- Case-4: 170 s (42 nodes, 504 processors)
+- Case-4: 366 s (42 nodes, 504 processors)
 
 > ## How do we measure time?
 > In the results shown above, we removed the initialization time ("CPL:INIT") which is about 1250 s for B1850 case. It varies slightly and to be accurate we used timing as provided by CESM.
