@@ -10,6 +10,7 @@ Containers for running ESM related tools.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+[![DOI](https://zenodo.org/badge/181903456.svg)](https://zenodo.org/badge/latestdoi/181903456)
 
 # How to get inputdata
 
