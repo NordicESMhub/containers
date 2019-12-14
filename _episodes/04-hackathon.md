@@ -64,6 +64,10 @@ We will reuse as much as possible what has been done during the preparatory work
 
 [Sarus](https://sarus.readthedocs.io/en/latest/) is an OCI-compatible container engine for HPC developed and maintained by [CSCS](https://www.cscs.ch/).
 
+The picture below shows Sarus architecture:
+
+<img src="https://sarus.readthedocs.io/en/latest/_images/architecture.svg" width="70%"/>
+
 Sarus is freely available and distributed under Copyright (c) 2018-2019 ETH Zurich. All rights reserved. See [Sarus License](https://github.com/eth-cscs/sarus/blob/master/LICENSE) for more information.
 
 ### Sarus on Piz Daint
