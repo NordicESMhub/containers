@@ -2,6 +2,9 @@
 
 Containers for running ESM related tools.
 
+**Citation**: Containers for running NorESM and CESM, Anne Fouilloux and Jean Iaquinta, 2019, 
+<a href="https://zenodo.org/badge/latestdoi/181903456"><img src="https://zenodo.org/badge/181903456.svg" alt="DOI"></a>
+
 ## Approach
 
 1. Create a conda recipe for your tool. We usually add it either in [conda-forge](https://conda-forge.org/) or [bioconda](https://bioconda.github.io/).
